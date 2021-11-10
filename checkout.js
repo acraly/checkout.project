@@ -2,8 +2,9 @@ const taxRate = 0.18;
 const shippingPrice = 15.0;
 
 window.onload = () => {
-    window.localStorage.setItem("taxRate", taxRate);
+    localStorage.setItem("taxRate", taxRate);
     localStorage.setItem("shippingPrice", shippingPrice);
+    
 
     window.sessionStorage.setItem("taxRate", taxRate);
     sessionStorage.setItem("shippingPrice", shippingPrice);
@@ -12,7 +13,7 @@ window.onload = () => {
 }
 
 let quantityControllerDivs = document.getElementsByClassName("quantity-controller");
-console.log(quantityControllerDivs);
+// console.log(quantityControllerDivs);
 
 [...quantityControllerDivs].forEach((quantityControllerDiv)=>{
     //minus button
@@ -55,9 +56,10 @@ const calculateCartTotal = () =>{
     // let productTotalPrices = document.getElementsByClassName("product-line-price");
 
     let subtotal = 0;
-    console.log(productTotalPrices);
-    productTotalPrices.forEach((productPrice)=>{
-        subtotal += parseFloat(productPrice.innerText);
+    // console.log(productTotalPrices);
+    productTotalPrices.forEach((Price)=>{
+        subtotal += parseFloat(Price.innerText);
+        
     });
     // console.log(subtotal);
     // let taxPrice = subtotal * taxRate;
